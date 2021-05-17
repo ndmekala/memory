@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from './Card.js'
 
 
 const Game = () => {
     
+    function randomizeBoard(array) {
+        let indexes = []
+        while (indexes.length < 3) {
+            let i = Math.round(Math.random()*(array.length-1))
+            if (!indexes.includes(i)) {
+                indexes.push(i)
+            }
+        }
+        return(indexes)
+    }
+
     const cardFactory = (opening, fullTitle, fen) => {
         return {opening, fullTitle, fen}
     }
@@ -21,18 +32,16 @@ const Game = () => {
         cardFactory('reti', 'Reti Opening', 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 0 1'),
     ])
 
+    const [indexes, setIndexes] = useState(randomizeBoard(cards))
+
+    useEffect(() => {
+    })
+
     return (
         <div>
-            <Card data={cards[0]} />
-            <Card data={cards[1]}/>
-            <Card data={cards[2]}/>
-            <Card data={cards[3]}/>
-            <Card data={cards[4]}/>
-            <Card data={cards[5]}/>
-            <Card data={cards[6]}/>
-            <Card data={cards[7]}/>
-            <Card data={cards[8]}/>
-            <Card data={cards[9]}/>
+            {indexes.map((index) => (
+                <Card key={cards[index].opening} data={cards[index]}/>
+            ))}
         </div>
     )
 }
