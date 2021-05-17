@@ -5,15 +5,13 @@ import "../styles/cm-chessboard.css"
 const Card = (props) => {
 
     useEffect(() => {
-        new Chessboard(document.getElementById(props.data.opening), {position: props.data.fen, sprite: {url: "./chessboard-sprite.svg"}})
+        const board = new Chessboard(document.getElementById(props.data.opening), {position: 'start', sprite: {url: "./chessboard-sprite-staunty.svg"}})
+        setTimeout(function() {board.setPosition(props.data.fen)}, 1000)
       }, [props]);
 
     return (
-        <div style={{border: "1px solid black", margin: "5px", width: "400px"}}>
-            <ul>
-                <li>{props.data.fullTitle}</li>
-                <li>{props.data.fen}</li>
-            </ul>
+        <div style={{border: "1px solid black", margin: "5px", width: "50vw"}}>
+            <h1>{props.data.fullTitle}</h1>
             <div id={props.data.opening} style={{margin: "10px"}}>
             </div>
         </div>
