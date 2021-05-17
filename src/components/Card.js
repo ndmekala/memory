@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Chessboard } from '../cm-chessboard/Chessboard'
-import '../styles/cm-chessboard.css'
+import { Chessboard } from "cm-chessboard"
 
 const Card = (props) => {
 
