@@ -6,14 +6,23 @@ import '../styles/game.css'
 const Game = (props) => {
     
     function randomizeBoard(array) {
-        let indexes = []
+        let indexes = [];
+        let allUnpicked = array.filter(element => element.picked === false);
+        let randomUnpickedCard = allUnpicked[Math.floor(Math.random()*allUnpicked.length)];
+        let unpickedCardIndex = cards.findIndex((element) => element === randomUnpickedCard);
+        indexes.push(unpickedCardIndex);
         while (indexes.length < 3) {
-            let i = Math.round(Math.random()*(array.length-1))
+            let i = Math.floor(Math.random()*array.length);
             if (!indexes.includes(i)) {
-                indexes.push(i)
-            }
-        }
-        return(indexes)
+                let randomizer = Math.floor(Math.random()*2)
+                if (randomizer) {
+                    indexes.push(i);
+                } else {
+                    indexes.unshift(i);
+                }
+            };
+        };
+        return indexes
     }
 
     function switchMode() {
@@ -26,10 +35,13 @@ const Game = (props) => {
         let stateCopy = cards;
         let index = cards.findIndex((element) => element.opening === opening)
         if (cards[index].picked) {
-            alert('you failed!')
+            props.lossSequence(score);
         } else {
+            let i = score;
+            i++
+            setScore(i)
             stateCopy[index].picked = !cards[index].picked;
-            setCards(stateCopy)
+            setCards([...stateCopy])
         }
     }
     const cardFactory = (opening, fullTitle, fen, picked) => {
@@ -50,9 +62,14 @@ const Game = (props) => {
     ])
     const [indexes, setIndexes] = useState(randomizeBoard(cards))
     const [mode, setMode] = useState(true)
+    const [score, setScore] = useState(0)
 
     useEffect(() => {
-        setIndexes(randomizeBoard(cards))
+        if (score < 10) {
+            setIndexes(randomizeBoard(cards))
+        } else {
+            props.winSequence(score)
+        }
     }, [cards]);
 
     return (
@@ -63,6 +80,8 @@ const Game = (props) => {
             ))}
             </div>
             <button onClick={switchMode}>Easy/Hard</button>
+            <div>Score: {score}</div>
+            <div>High Score: {props.hiScore}</div>
         </div>
     )
 }
