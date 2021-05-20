@@ -1,5 +1,11 @@
-h1 {
-    font-size: 1.25rem;
+@font-face {
+    src: url(../assets/EBGaramond-VariableFont_wght.ttf);
+    font-family: Garamond;
+}
+
+h2 {
+    font-family: Garamond;
+    pointer-events: none;
 }
 
 .card-wrapper {
@@ -9,6 +15,6 @@ h1 {
     padding: 5px;
 }
 
-.card-button {
-    margin: 5px;
+.card-board {
+    pointer-events: none;
 }

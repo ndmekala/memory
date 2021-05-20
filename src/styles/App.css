@@ -1,0 +1,13 @@
+@font-face {
+    src: url(../assets/Cinzel-VariableFont_wght.ttf);
+    font-family: Cinzel;
+}
+
+.hero {
+    background-color: black;
+    color: white;
+    font-family: Cinzel;
+    font-size: 4rem;
+    text-transform: uppercase;
+    font-weight: lighter;
+}

@@ -6,16 +6,18 @@ import '../styles/card.css'
 const Card = (props) => {
 
     useEffect(() => {
-        const board = new Chessboard(document.getElementById(props.data.opening), {position: 'start', sprite: {url: "./chessboard-sprite-staunty.svg"}})
-        setTimeout(function() {board.setPosition(props.data.fen)}, 1000)
-      }, [props.data.opening]);
+        const board = new Chessboard(document.getElementById(props.data.opening + "-board"), {position: 'start', sprite: {url: "./chessboard-sprite-staunty.svg"}})
+        setTimeout(function() {board.setPosition(props.data.fen)}, 500)
+        return () => {
+            board.destroy()
+        }
+      });
 
     return (
-        <div className="card-wrapper">
-            {props.mode && <h1>{props.data.fullTitle}</h1>}
-            <div id={props.data.opening}>
+        <div className="card-wrapper" id={props.data.opening} onClick={props.pick} >
+            <h2>{props.data.fullTitle}</h2>
+            <div className="card-board" id={props.data.opening + "-board"}>
             </div>
-            <button id={props.data.opening + '-button'} onClick={props.pick} className="card-button">Pick me!</button>
         </div>
     )
 }

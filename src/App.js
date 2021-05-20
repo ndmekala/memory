@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Game from './components/Game.js'
 import Loss from './components/Loss.js'
 import Win from './components/Win.js'
+import './styles/App.css'
 
 const App = () => {
   const [mountGame, setMountGame] = useState(true);
@@ -31,9 +32,14 @@ const App = () => {
 
   return (
     <div>
+      <section className="hero">
+        <h1>Queen’s Gambit</h1>
+      </section>
+      <div>
       {mountGame && <Game lossSequence={lossSequence} winSequence={winSequence} hiScore={hiScore} />}
       {mountLoss && <Loss newGame={newGame} />}
       {mountWin && <Win newGame={newGame} />}
+      </div>
     </div>
   );
 }

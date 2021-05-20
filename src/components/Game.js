@@ -25,23 +25,18 @@ const Game = (props) => {
         return indexes
     }
 
-    function switchMode() {
-      let newState = !mode
-      setMode(newState)
-    }
-
     function handlePick(e) {
-        let opening = e.target.id.replace('-button', '');
+        let opening = e.target.id;
         let stateCopy = cards;
         let index = cards.findIndex((element) => element.opening === opening)
         if (cards[index].picked) {
             props.lossSequence(score);
         } else {
             let i = score;
-            i++
-            setScore(i)
+            i++;
+            setScore(i);
             stateCopy[index].picked = !cards[index].picked;
-            setCards([...stateCopy])
+            setCards([...stateCopy]);
         }
     }
     const cardFactory = (opening, fullTitle, fen, picked) => {
@@ -61,7 +56,6 @@ const Game = (props) => {
         cardFactory('reti', 'Reti Opening', 'rnbqkbnr/pppppppp/8/8/8/5N2/PPPPPPPP/RNBQKB1R b KQkq - 0 1', false),
     ])
     const [indexes, setIndexes] = useState(randomizeBoard(cards))
-    const [mode, setMode] = useState(true)
     const [score, setScore] = useState(0)
 
     useEffect(() => {
@@ -76,10 +70,9 @@ const Game = (props) => {
         <div className="game-wrapper">
             <div className="game-cards">
             {indexes.map((index) => (
-                <Card pick={handlePick} key={cards[index].opening} data={cards[index]} mode={mode}/>
+                <Card pick={handlePick} key={cards[index].opening} data={cards[index]} />
             ))}
             </div>
-            <button onClick={switchMode}>Easy/Hard</button>
             <div>Score: {score}</div>
             <div>High Score: {props.hiScore}</div>
         </div>
