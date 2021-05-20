@@ -15,9 +15,9 @@ const Card = (props) => {
 
     return (
         <div className="card-wrapper" id={props.data.opening} onClick={props.pick} >
-            <h2>{props.data.fullTitle}</h2>
             <div className="card-board" id={props.data.opening + "-board"}>
             </div>
+            <h2>{props.data.fullTitle}</h2>
         </div>
     )
 }

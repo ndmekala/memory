@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Game from './components/Game.js'
 import Loss from './components/Loss.js'
 import Win from './components/Win.js'
-import './styles/App.css'
+import './styles/app.css'
 
 const App = () => {
   const [mountGame, setMountGame] = useState(true);
@@ -31,14 +31,24 @@ const App = () => {
   }
 
   return (
-    <div>
-      <section className="hero">
-        <h1>Queen’s Gambit</h1>
-      </section>
-      <div>
-      {mountGame && <Game lossSequence={lossSequence} winSequence={winSequence} hiScore={hiScore} />}
+    <div className="app">
       {mountLoss && <Loss newGame={newGame} />}
       {mountWin && <Win newGame={newGame} />}
+      <section className="app-hero">
+        <video autoPlay muted loop>
+          <source src="./queensgambit_headervid.mp4" type="video/mp4"></source>
+        </video>
+        <div className="app-hero-container">
+        <h1 className="app-miniheader">The</h1>
+        <h1>Queen’s</h1>
+        <h1>Gambit</h1>
+        <button onClick={() => {document.querySelector('.game-wrapper').scrollIntoView()}}>
+          Play
+        </button>
+        </div>
+      </section>
+      <div className="app-game-container">
+      {mountGame && <Game lossSequence={lossSequence} winSequence={winSequence} hiScore={hiScore} />}
       </div>
     </div>
   );

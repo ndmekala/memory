@@ -68,13 +68,29 @@ const Game = (props) => {
 
     return (
         <div className="game-wrapper">
+            <div className="game-rulesandscore">
+                <div className="game-rules">
+                <p>This game tests your memory. Don’t click the same opening twice!</p>
+                </div>
+                <div className="game-score">
+                <table>
+                <tr>
+                    <td className="game-score-label">Score:</td>
+                    <td>{score}</td>
+                </tr>
+                <tr>
+                    <td className="game-score-label">High Score:</td>
+                    <td>{props.hiScore}</td>
+                </tr>
+            </table>
+
+                </div>
+            </div>
             <div className="game-cards">
             {indexes.map((index) => (
                 <Card pick={handlePick} key={cards[index].opening} data={cards[index]} />
             ))}
             </div>
-            <div>Score: {score}</div>
-            <div>High Score: {props.hiScore}</div>
         </div>
     )
 }

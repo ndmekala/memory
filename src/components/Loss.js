@@ -1,26 +1,13 @@
 import React from "react";
-import YouTube from 'react-youtube';
+import '../styles/video.css'
 
 const Loss = (props) => {
 
-    const opts = {
-        height: '780',
-        width: '1280',
-        playerVars: {
-            autoplay: 1,
-            controls: 0,
-            disablekb: 1,
-            modestbranding: 1,
-            start: 62,
-            end: 82,
-            showinfo: 0,
-            fs: 0,
-        }
-    }
-
     return (
-        <div>
-            <YouTube videoId="f_VIMtlCZzY" opts={opts} onEnd={props.newGame}/>
+        <div className="video-wrapper">
+            <video autoPlay onEnded={props.newGame}>
+                <source src="./queensgambit_lossvid.mp4" type="video/mp4"></source>
+            </video>
         </div>
     )
 }

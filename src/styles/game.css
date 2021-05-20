@@ -1,5 +1,37 @@
+.game-wrapper {
+    padding: 1rem 1rem;
+    max-width: 800px;
+    margin: 0 auto 1rem auto;
+    background-color: rgba(197, 160, 118, 0.4);
+    border-radius: 0.5rem;
+
+}
+
 .game-cards {
+    margin-top: 0.625rem;
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-rulesandscore {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    wrap: nowrap;
+}
+
+.game-rules {
+    width: 65%;
+}
+
+.game-score-label {
+    width: 11rem;
+}
+
+.game-score {
+    background-color: #ecdab9;
+    width: 30%;
+    padding: 5px;
 }
