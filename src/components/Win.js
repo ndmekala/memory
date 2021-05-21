@@ -8,6 +8,9 @@ const Win = (props) => {
             <video autoPlay onEnded={props.newGame}>
                 <source src="./queensgambit_winvid.mp4" type="video/mp4"></source>
             </video>
+            <div className="video-message">
+                Hooray! You win!
+            </div>
         </div>
     )
 }
