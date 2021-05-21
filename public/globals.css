@@ -1,11 +1,17 @@
 html {
     scroll-behavior: smooth;
+    scrollbar-width: none;
 }
 
 body {
     font-family: Baskerville;
     background-color: black;
     box-sizing: border-box;
+    -ms-overflow-style: none;
+}
+
+body::-webkit-scrollbar {
+    display: none;
 }
 
 h1 {
