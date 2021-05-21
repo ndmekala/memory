@@ -1,0 +1,68 @@
+.menu-wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: flex-end;
+    visibility: hidden;
+}
+
+.menu-hamburger {
+    padding-top: 40px;
+    padding-right: 30px;
+    position: fixed;
+    z-index: 10;
+    color: #FFFFFF;
+    visibility: visible;
+}
+
+.menu-hamburger span {
+    display: block;
+    margin-bottom: 5px;
+    width: 35px;
+    height: 3px;
+    background-color: #FFFFFF;
+    transition: ease 250ms;
+}
+
+.menu-hamburger-animate-1 {
+    transform: translateY(6px) rotate(-135deg);
+}
+
+.menu-hamburger-animate-2 {
+    opacity: 0;
+}
+
+.menu-hamburger-animate-3 {
+    transform: translateY(-10px) rotate(-225deg);
+}
+
+
+.menu-overlay {
+    background: #000000;
+    padding-top: 100px;
+    padding-left: 100px;
+    position: fixed;
+    visibility: visible;
+    top: 0;
+    bottom: 0;
+    left: 100vw;
+    right: 0;
+    display: flex;
+    flex-wrap: wrap; 
+    align-content: flex-start;
+    transition: ease 500ms;
+}
+
+.menu-cover {
+    left: 0;
+}
+
+.menu-link {
+    display: block;
+    width: 100%;
+    height: 12vw;
+}
+

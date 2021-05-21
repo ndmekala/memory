@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Game from './components/Game.js'
 import Loss from './components/Loss.js'
 import Win from './components/Win.js'
+import Menu from './components/Menu.js'
 import './styles/app.css'
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
 
   return (
     <div className="app">
+      <Menu />
       {mountLoss && <Loss newGame={newGame} />}
       {mountWin && <Win newGame={newGame} />}
       <section className="app-hero">

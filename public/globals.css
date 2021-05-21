@@ -1,6 +1,5 @@
 html {
     scroll-behavior: smooth;
-    scrollbar-width: none;
 }
 
 body {
@@ -46,15 +45,27 @@ p {
     margin-bottom: 0;
 }
 
+a, :visited {
+    font-size: 9vw;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: #c5a076
+}
+
 button {
     font-family: Baskerville;
     font-size: 1.5rem;
     text-transform: uppercase;
+    text-shadow: 1px 1px 2px #000000;
     border-radius: 0.3125rem;
     color: white;
     background-color: #c5a076;
     border: 0px solid white;
     padding: 0.3125rem 0.5rem;
+    box-shadow: 1px 1px 2px #000000
 }
 
 table {

@@ -70,7 +70,7 @@ const Game = (props) => {
         <div className="game-wrapper">
             <div className="game-rulesandscore">
                 <div className="game-rules">
-                <p>This game tests your memory. Don’t click the same opening twice!</p>
+                <p>This game tests your memory. Don’t click the same chess opening twice!</p>
                 </div>
                 <div className="game-score">
                 <table>
