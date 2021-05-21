@@ -1,8 +1,8 @@
 .game-wrapper {
     padding: 1rem 1rem;
-    max-width: 800px;
+    max-width: 50rem;
     margin: 0 auto 1rem auto;
-    background-color: rgba(197, 160, 118, 0.4);
+    background-color: rgba(197, 160, 118, 0.7);
     border-radius: 0.5rem;
 
 }
@@ -33,5 +33,5 @@
 .game-score {
     background-color: #ecdab9;
     width: 30%;
-    padding: 5px;
+    padding: 0.3125rem;
 }

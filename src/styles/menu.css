@@ -10,8 +10,8 @@
 }
 
 .menu-hamburger {
-    padding-top: 40px;
-    padding-right: 30px;
+    padding-top: 2.5rem;
+    padding-right: 1.875rem;
     position: fixed;
     z-index: 10;
     color: #FFFFFF;
@@ -20,9 +20,9 @@
 
 .menu-hamburger span {
     display: block;
-    margin-bottom: 5px;
-    width: 35px;
-    height: 3px;
+    margin-bottom: 0.3125rem;
+    width: 2.1875rem;
+    height: 0.1875rem;
     background-color: #FFFFFF;
     transition: ease 250ms;
 }
@@ -42,8 +42,8 @@
 
 .menu-overlay {
     background: #000000;
-    padding-top: 100px;
-    padding-left: 100px;
+    padding-top: 15vh;
+    padding-left: 15vw;
     position: fixed;
     visibility: visible;
     top: 0;

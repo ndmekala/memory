@@ -4,9 +4,16 @@ h2 {
 
 .card-wrapper {
     width: 30%;
+    height: 24vh;
     background-color: #ecdab9;
-    margin-bottom: 10px;
-    padding: 5px;
+    margin-bottom: 0.625rem;
+    padding: 0.3125rem;
+}
+
+@media (min-width: 640px) {
+    .card-wrapper {
+        height: auto;
+    }
 }
 
 .card-board {
