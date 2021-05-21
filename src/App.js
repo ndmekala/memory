@@ -36,7 +36,7 @@ const App = () => {
       {mountWin && <Win newGame={newGame} />}
       <section className="app-hero">
         <video autoPlay muted loop>
-          <source src="./queensgambit_headervid.mp4" type="video/mp4"></source>
+          <source src="./queensgambit_headervid_01.mp4" type="video/mp4"></source>
         </video>
         <div className="app-hero-container">
         <h1 className="app-miniheader">The</h1>
