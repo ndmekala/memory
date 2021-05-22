@@ -37,7 +37,7 @@ const App = () => {
       {mountLoss && <Loss newGame={newGame} />}
       {mountWin && <Win newGame={newGame} />}
       <section className="app-hero">
-        <video autoPlay muted loop>
+        <video autoPlay muted loop playsInline>
           <source
             src="./queensgambit_headervid_01.mp4"
             type="video/mp4"
