@@ -11,10 +11,6 @@ const App = () => {
   const [mountWin, setMountWin] = useState(false);
   const [hiScore, setHiScore] = useState(0);
 
-  function videoLoaded() {
-	console.log('heyyyaaa')
-  }
-
   function lossSequence(score) {
     if (score > hiScore) {
       setHiScore(score);
@@ -41,7 +37,7 @@ const App = () => {
       {mountLoss && <Loss newGame={newGame} />}
       {mountWin && <Win newGame={newGame} />}
       <section className="app-hero">
-        <video onLoad={videoLoaded} autoPlay muted loop playsInline>
+        <video autoPlay muted loop playsInline>
           <source
             src="./queensgambit_headervid_01.mp4"
             type="video/mp4"
